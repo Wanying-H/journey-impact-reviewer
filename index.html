@@ -602,7 +602,7 @@
   <div class="dialog">
     <h3>Paste JSON</h3>
     <p>Creates a new map from the JSON your assistant produced.</p>
-    <textarea id="pasteBox" spellcheck="false" placeholder='{"title":"…","changeModel":[{"id":"CH-01","name":"…"}],"steps":[{"name":"…","action":["…"],"insight":["…"],"changes":[{"id":"CH-01","quote":"…","evidence":"stated"}],"changeType":"","reason":"…"}]}'></textarea>
+    <textarea id="pasteBox" spellcheck="false" placeholder='{"title":"…","changeModel":[{"id":"MHHS-01","name":"…"}],"steps":[{"name":"…","action":["…"],"insight":["…"],"changes":[{"id":"MHHS-01","quote":"…","evidence":"stated"}],"changeType":"","reason":"…"}]}'></textarea>
     <div class="dialog-err" id="pasteErr"></div>
     <div class="dialog-foot">
       <button class="btn ghost" id="pasteCancel">Cancel</button>
@@ -1063,7 +1063,7 @@
     return b;
   }
 
-  // ---------- change impact ----------
+  // ---------- MHHS impact ----------
   var CHANGE_TYPE = [
     { v:"new",     label:"New step" },
     { v:"changed", label:"Changed"  },
@@ -1482,7 +1482,7 @@
 
     // billing
     var r4 = el("tr");
-    var rh4 = el("th","rowhead"); rh4.appendChild(el("div","pad","Change impact")); r4.appendChild(rh4);
+    var rh4 = el("th","rowhead"); rh4.appendChild(el("div","pad","MHHS impact")); r4.appendChild(rh4);
     view.forEach(function(v){
       r4.appendChild(impactCell(v.step, function(){ persist(); render(); }));
     });
