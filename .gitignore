@@ -1,0 +1,20 @@
+# A saved copy of the tool has your data written into it and looks
+# identical to the blank file. Never commit one.
+journey-maps-*.html
+journey-impact-*.html
+*-saved.html
+
+# Real change models and anything else internal
+change-model.md
+*-internal.*
+internal/
+
+# Exports
+*.pdf
+*.jpg
+*.jpeg
+*.png
+
+# OS noise
+.DS_Store
+Thumbs.db

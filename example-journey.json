@@ -1,0 +1,218 @@
+{
+  "title": "Hiring a bike — impact of the pricing change",
+  "subtitle": "Fictional demo data — an invented bike hire operator. Not from any real organisation.",
+  "changeModel": [
+    {
+      "id": "CH-01",
+      "name": "Per-minute pricing replaces day pass"
+    },
+    {
+      "id": "CH-02",
+      "name": "Off-peak discount band"
+    },
+    {
+      "id": "CH-03",
+      "name": "Fare shown before unlock"
+    },
+    {
+      "id": "CH-04",
+      "name": "Live fare during the ride"
+    },
+    {
+      "id": "CH-05",
+      "name": "Receipt itemisation"
+    },
+    {
+      "id": "CH-06",
+      "name": "Refund rules for interrupted rides"
+    },
+    {
+      "id": "CH-07",
+      "name": "Advisor fare lookup tool"
+    },
+    {
+      "id": "CH-08",
+      "name": "Corporate account billing cycle"
+    }
+  ],
+  "steps": [
+    {
+      "name": "Find a bike",
+      "action": [
+        "Open the app and look at the map",
+        "Walk to the nearest available bike"
+      ],
+      "insight": [
+        "Availability shown in the app doesn't always match what's on the street.",
+        "Wants to know the cost before committing to the walk."
+      ],
+      "changes": [
+        {
+          "id": "CH-03",
+          "quote": "the applicable rate must be shown on the bike detail screen",
+          "evidence": "implied"
+        }
+      ],
+      "changeType": "wording",
+      "affected": [
+        "customers"
+      ],
+      "reason": "The rider checks the map here, so the rate may need to appear earlier than the bike detail screen.",
+      "reviewStatus": "ai_suggested"
+    },
+    {
+      "name": "Unlock",
+      "action": [
+        "Scan the code on the bike",
+        "Confirm the price shown",
+        "Wait for the lock to release"
+      ],
+      "insight": [
+        "Confirming a price without knowing how long the ride will take feels uncertain.",
+        "No way to check the off-peak cut-off before starting."
+      ],
+      "changes": [
+        {
+          "id": "CH-01",
+          "quote": "riders are charged per minute of active hire, with a daily cap",
+          "evidence": "stated"
+        },
+        {
+          "id": "CH-02",
+          "quote": "rides starting between 10:00 and 15:00 are charged at 60%",
+          "evidence": "stated"
+        },
+        {
+          "id": "CH-03",
+          "quote": "shown on the bike detail screen before the rider unlocks",
+          "evidence": "stated"
+        }
+      ],
+      "changeType": "changed",
+      "affected": [
+        "customers",
+        "systems"
+      ],
+      "reason": "The unlock is where the rate is now fixed, so the rate and its band have to be visible and correct here.",
+      "reviewStatus": "ai_suggested"
+    },
+    {
+      "name": "Ride",
+      "action": [
+        "Cycle to the destination",
+        "Pause to check the route"
+      ],
+      "insight": [
+        "Stopping now costs money, which changes how the rider behaves.",
+        "No sense of what the ride has cost so far."
+      ],
+      "changes": [
+        {
+          "id": "CH-04",
+          "quote": "the app shows a running total, updated at least every 60 seconds",
+          "evidence": "stated"
+        }
+      ],
+      "changeType": "new",
+      "affected": [
+        "customers",
+        "systems"
+      ],
+      "reason": "Nothing is shown during a ride today, so the running total is a new element in this step.",
+      "reviewStatus": "ai_suggested"
+    },
+    {
+      "name": "Report a fault",
+      "action": [
+        "Stop when the gears slip",
+        "Report the fault in the app",
+        "Wait to hear whether the ride is still being charged"
+      ],
+      "insight": [
+        "Doesn't know whether the meter is still running while the fault is reviewed.",
+        "Expects the charge to stop the moment the fault is reported, not when it's confirmed."
+      ],
+      "changes": [
+        {
+          "id": "CH-06",
+          "quote": "time is not charged when a ride is interrupted by a mechanical fault, once confirmed",
+          "evidence": "implied"
+        },
+        {
+          "id": "CH-07",
+          "quote": "advisors need a tool that reconstructs how a fare was calculated",
+          "evidence": "check"
+        }
+      ],
+      "changeType": "",
+      "affected": [
+        "customers",
+        "advisors"
+      ],
+      "reason": "The policy says charging stops once confirmed, but not what happens between reporting and confirmation.",
+      "reviewStatus": "ai_suggested"
+    },
+    {
+      "name": "End the hire",
+      "action": [
+        "Park in a designated bay",
+        "Lock the bike",
+        "See the final fare"
+      ],
+      "insight": [
+        "The final figure is the first hard number the rider has seen.",
+        "Wants to understand which rate applied before deciding whether to query it."
+      ],
+      "changes": [
+        {
+          "id": "CH-01",
+          "quote": "with a daily cap",
+          "evidence": "stated"
+        },
+        {
+          "id": "CH-05",
+          "quote": "receipts must show duration, rate band applied, and any cap reached",
+          "evidence": "stated"
+        }
+      ],
+      "changeType": "changed",
+      "affected": [
+        "customers",
+        "billing"
+      ],
+      "reason": "The fare is finalised here, and the receipt content is explicitly changed by CH-05.",
+      "reviewStatus": "ai_suggested"
+    },
+    {
+      "name": "Query a charge",
+      "action": [
+        "Contact support about the amount",
+        "Explain when and where the ride happened",
+        "Wait for a decision"
+      ],
+      "insight": [
+        "Has to describe the ride from memory because the receipt doesn't explain the calculation.",
+        "No visibility of how long a decision will take."
+      ],
+      "changes": [
+        {
+          "id": "CH-07",
+          "quote": "a tool that reconstructs how a fare was calculated, to answer disputes",
+          "evidence": "stated"
+        },
+        {
+          "id": "CH-06",
+          "quote": "once confirmed",
+          "evidence": "implied"
+        }
+      ],
+      "changeType": "new",
+      "affected": [
+        "advisors",
+        "systems"
+      ],
+      "reason": "Advisors cannot answer per-minute disputes with today's account screen, so a lookup step has to exist.",
+      "reviewStatus": "ai_suggested"
+    }
+  ]
+}
