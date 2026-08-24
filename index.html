@@ -154,7 +154,7 @@
   .tally b{font-size:21px;font-weight:640;line-height:1;color:var(--ink-900);letter-spacing:-.03em}
   .tally .lbl{
     font-size:11px;text-transform:uppercase;letter-spacing:.06em;
-    color:var(--ink-500);font-weight:600;
+    color:var(--ink-500);font-weight:600;white-space:nowrap;
   }
   .tally .hit b{color:var(--red)}
   .tally .warn b,.tally .warn .lbl{color:var(--ochre)}
@@ -348,7 +348,17 @@
   .p-sys {background:#E8EAEE;color:#414B58;border-color:#D8DCE3}
 
   /* ---------- key dialog ---------- */
-  .dialog.key{max-width:640px;max-height:82vh;overflow:auto}
+  .dialog.key{max-width:640px;max-height:82vh;overflow:auto;position:relative}
+  .dialog-close{
+    position:absolute;top:14px;right:14px;
+    display:flex;align-items:center;justify-content:center;
+    width:30px;height:30px;padding:0;
+    border:1px solid transparent;background:transparent;
+    border-radius:var(--r-sm);color:var(--ink-500);
+    transition:background .12s, color .12s;
+  }
+  .dialog-close:hover{background:var(--tint);color:var(--ink-900)}
+  .dialog.key h3{padding-right:36px}
   .key-sec{margin-top:18px}
   .key-sec h4{
     margin:0 0 9px;font-size:11px;text-transform:uppercase;letter-spacing:.07em;
@@ -540,6 +550,7 @@
 
 <div class="overlay no-print" id="keyOverlay">
   <div class="dialog key">
+    <button class="dialog-close" id="keyClose" title="Close" aria-label="Close"></button>
     <h3>What the labels mean</h3>
     <p>Everything below is a suggestion from your assistant until a person confirms it.</p>
 
@@ -592,9 +603,6 @@
         <span>A person decided. If they overruled the assistant, the original suggestion is kept on record.</span></div>
     </div>
 
-    <div class="dialog-foot">
-      <button class="btn primary" id="keyClose">Close</button>
-    </div>
   </div>
 </div>
 
@@ -602,7 +610,7 @@
   <div class="dialog">
     <h3>Paste JSON</h3>
     <p>Creates a new map from the JSON your assistant produced.</p>
-    <textarea id="pasteBox" spellcheck="false" placeholder='{"title":"…","changeModel":[{"id":"MHHS-01","name":"…"}],"steps":[{"name":"…","action":["…"],"insight":["…"],"changes":[{"id":"MHHS-01","quote":"…","evidence":"stated"}],"changeType":"","reason":"…"}]}'></textarea>
+    <textarea id="pasteBox" spellcheck="false" placeholder='{"title":"…","changeModel":[{"id":"CH-01","name":"…"}],"steps":[{"name":"…","action":["…"],"insight":["…"],"changes":[{"id":"CH-01","quote":"…","evidence":"stated"}],"changeType":"","reason":"…"}]}'></textarea>
     <div class="dialog-err" id="pasteErr"></div>
     <div class="dialog-foot">
       <button class="btn ghost" id="pasteCancel">Cancel</button>
@@ -1063,7 +1071,7 @@
     return b;
   }
 
-  // ---------- MHHS impact ----------
+  // ---------- change impact ----------
   var CHANGE_TYPE = [
     { v:"new",     label:"New step" },
     { v:"changed", label:"Changed"  },
@@ -1482,7 +1490,7 @@
 
     // billing
     var r4 = el("tr");
-    var rh4 = el("th","rowhead"); rh4.appendChild(el("div","pad","MHHS impact")); r4.appendChild(rh4);
+    var rh4 = el("th","rowhead"); rh4.appendChild(el("div","pad","Change impact")); r4.appendChild(rh4);
     view.forEach(function(v){
       r4.appendChild(impactCell(v.step, function(){ persist(); render(); }));
     });
@@ -1722,6 +1730,7 @@
     syncToolRow._t = setTimeout(syncToolRow, 120);
   });
 
+  $("#keyClose").appendChild(icon("close", 15, 1.8));
   decorate("#btnKey","question");
   decorate("#btnNew","plus");
   decorate("#btnDup","copy");
