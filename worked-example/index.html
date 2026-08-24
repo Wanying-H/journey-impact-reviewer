@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Journey Impact</title>
-<script id="seed" type="application/json">{"maps":[{"id":"3gmevz8","title":"Untitled journey","subtitle":"","changeModel":[],"steps":[{"id":"emglr27","name":"","action":[],"insight":[],"changes":[],"changeType":"","aiType":"","affected":[],"reason":"","reviewed":false,"note":[]}]},{"id":"uk792ws","title":"Hiring a bike - impact of the pricing change","subtitle":"Demo data · fictional operator · paste this into the tool to try it","changeModel":[{"id":"CH-01","name":"Per-minute pricing replaces day pass"},{"id":"CH-02","name":"Off-peak discount band"},{"id":"CH-03","name":"Fare shown before unlock"},{"id":"CH-04","name":"Live fare during the ride"},{"id":"CH-05","name":"Receipt itemisation"},{"id":"CH-06","name":"Refund rules for interrupted rides"},{"id":"CH-07","name":"Advisor fare lookup tool"},{"id":"CH-08","name":"Corporate account billing cycle"}],"steps":[{"id":"l2i7nnb","name":"Find a bike","action":["Open the app and look at the map","Walk to the nearest available bike"],"insight":["Availability shown in the app doesn't always match what's on the street.","Wants to know the cost before committing to the walk."],"changes":[{"id":"CH-03","quote":"the applicable rate must be shown on the bike detail screen","evidence":"implied"}],"changeType":"wording","aiType":"wording","affected":["customers"],"reason":"The rider checks the map here, so the rate may need to appear earlier than the bike detail screen.","reviewed":false,"note":[]},{"id":"1vi1lea","name":"Unlock","action":["Scan the code on the bike","Confirm the price shown","Wait for the lock to release"],"insight":["Confirming a price without knowing how long the ride will take feels uncertain.","No way to check the off-peak cut-off before starting."],"changes":[{"id":"CH-01","quote":"riders are charged per minute of active hire, with a daily cap","evidence":"stated"},{"id":"CH-02","quote":"rides starting between 10:00 and 15:00 are charged at 60%","evidence":"stated"},{"id":"CH-03","quote":"shown on the bike detail screen before the rider unlocks","evidence":"stated"}],"changeType":"changed","aiType":"changed","affected":["customers","systems"],"reason":"The unlock is where the rate is now fixed, so the rate and its band have to be visible and correct here.","reviewed":false,"note":[]},{"id":"upnujz0","name":"Ride","action":["Cycle to the destination","Pause to check the route"],"insight":["Stopping now costs money, which changes how the rider behaves.","No sense of what the ride has cost so far."],"changes":[{"id":"CH-04","quote":"the app shows a running total, updated at least every 60 seconds","evidence":"stated"}],"changeType":"new","aiType":"new","affected":["customers","systems"],"reason":"Nothing is shown during a ride today, so the running total is a new element in this step.","reviewed":false,"note":[]},{"id":"oupef8r","name":"Report a fault","action":["Stop when the gears slip","Report the fault in the app","Wait to hear whether the ride is still being charged"],"insight":["Doesn't know whether the meter is still running while the fault is reviewed.","Expects the charge to stop the moment the fault is reported, not when it's confirmed."],"changes":[{"id":"CH-06","quote":"time is not charged when a ride is interrupted by a mechanical fault, once confirmed","evidence":"implied"},{"id":"CH-07","quote":"advisors need a tool that reconstructs how a fare was calculated","evidence":"check"}],"changeType":"","aiType":"","affected":["customers","advisors"],"reason":"The policy says charging stops once confirmed, but not what happens between reporting and confirmation.","reviewed":false,"note":[]},{"id":"pcziu52","name":"End the hire","action":["Park in a designated bay","Lock the bike","See the final fare"],"insight":["The final figure is the first hard number the rider has seen.","Wants to understand which rate applied before deciding whether to query it."],"changes":[{"id":"CH-01","quote":"with a daily cap","evidence":"stated"},{"id":"CH-05","quote":"receipts must show duration, rate band applied, and any cap reached","evidence":"stated"}],"changeType":"changed","aiType":"changed","affected":["customers","billing"],"reason":"The fare is finalised here, and the receipt content is explicitly changed by CH-05.","reviewed":false,"note":[]},{"id":"1m2k9fj","name":"Query a charge","action":["Contact support about the amount","Explain when and where the ride happened","Wait for a decision"],"insight":["Has to describe the ride from memory because the receipt doesn't explain the calculation.","No visibility of how long a decision will take."],"changes":[{"id":"CH-07","quote":"a tool that reconstructs how a fare was calculated, to answer disputes","evidence":"stated"},{"id":"CH-06","quote":"once confirmed","evidence":"implied"}],"changeType":"new","aiType":"new","affected":["advisors","systems"],"reason":"Advisors cannot answer per-minute disputes with today's account screen, so a lookup step has to exist.","reviewed":false,"note":[]}]}],"activeId":"uk792ws"}</script>
+<script id="seed" type="application/json">{"maps":[{"id":"ofz9wy0","title":"Hiring a bike - impact of the pricing change","subtitle":"Fictional demo data — an invented bike hire operator. Not from any real organisation.","changeModel":[{"id":"CH-01","name":"Per-minute pricing replaces day pass"},{"id":"CH-02","name":"Off-peak discount band"},{"id":"CH-03","name":"Fare shown before unlock"},{"id":"CH-04","name":"Live fare during the ride"},{"id":"CH-05","name":"Receipt itemisation"},{"id":"CH-06","name":"Refund rules for interrupted rides"},{"id":"CH-07","name":"Advisor fare lookup tool"},{"id":"CH-08","name":"Corporate account billing cycle"}],"steps":[{"id":"zjzwmie","name":"Find a bike","action":["Open the app and look at the map","Walk to the nearest available bike"],"insight":["Availability shown in the app doesn't always match what's on the street.","Wants to know the cost before committing to the walk."],"changes":[{"id":"CH-03","quote":"the applicable rate must be shown on the bike detail screen","evidence":"implied"}],"changeType":"wording","aiType":"wording","affected":["customers"],"reason":"The rider checks the map here, so the rate may need to appear earlier than the bike detail screen.","reviewed":false,"note":[]},{"id":"4fin4t4","name":"Unlock","action":["Scan the code on the bike","Confirm the price shown","Wait for the lock to release"],"insight":["Confirming a price without knowing how long the ride will take feels uncertain.","No way to check the off-peak cut-off before starting."],"changes":[{"id":"CH-01","quote":"riders are charged per minute of active hire, with a daily cap","evidence":"stated"},{"id":"CH-02","quote":"rides starting between 10:00 and 15:00 are charged at 60%","evidence":"stated"},{"id":"CH-03","quote":"shown on the bike detail screen before the rider unlocks","evidence":"stated"}],"changeType":"changed","aiType":"changed","affected":["customers","systems"],"reason":"The unlock is where the rate is now fixed, so the rate and its band have to be visible and correct here.","reviewed":false,"note":[]},{"id":"1puxxm8","name":"Ride","action":["Cycle to the destination","Pause to check the route"],"insight":["Stopping now costs money, which changes how the rider behaves.","No sense of what the ride has cost so far."],"changes":[{"id":"CH-04","quote":"the app shows a running total, updated at least every 60 seconds","evidence":"stated"}],"changeType":"new","aiType":"new","affected":["customers","systems"],"reason":"Nothing is shown during a ride today, so the running total is a new element in this step.","reviewed":false,"note":[]},{"id":"rsjut7i","name":"Report a fault","action":["Stop when the gears slip","Report the fault in the app","Wait to hear whether the ride is still being charged"],"insight":["Doesn't know whether the meter is still running while the fault is reviewed.","Expects the charge to stop the moment the fault is reported, not when it's confirmed."],"changes":[{"id":"CH-06","quote":"time is not charged when a ride is interrupted by a mechanical fault, once confirmed","evidence":"implied"},{"id":"CH-07","quote":"advisors need a tool that reconstructs how a fare was calculated","evidence":"check"}],"changeType":"","aiType":"","affected":["customers","advisors"],"reason":"The policy says charging stops once confirmed, but not what happens between reporting and confirmation.","reviewed":false,"note":[]},{"id":"4buj7aa","name":"End the hire","action":["Park in a designated bay","Lock the bike","See the final fare"],"insight":["The final figure is the first hard number the rider has seen.","Wants to understand which rate applied before deciding whether to query it."],"changes":[{"id":"CH-01","quote":"with a daily cap","evidence":"stated"},{"id":"CH-05","quote":"receipts must show duration, rate band applied, and any cap reached","evidence":"stated"}],"changeType":"changed","aiType":"changed","affected":["customers","billing"],"reason":"The fare is finalised here, and the receipt content is explicitly changed by CH-05.","reviewed":false,"note":[]},{"id":"ps97zdp","name":"Query a charge","action":["Contact support about the amount","Explain when and where the ride happened","Wait for a decision"],"insight":["Has to describe the ride from memory because the receipt doesn't explain the calculation.","No visibility of how long a decision will take."],"changes":[{"id":"CH-07","quote":"a tool that reconstructs how a fare was calculated, to answer disputes","evidence":"stated"},{"id":"CH-06","quote":"once confirmed","evidence":"implied"}],"changeType":"new","aiType":"new","affected":["advisors","systems"],"reason":"Advisors cannot answer per-minute disputes with today's account screen, so a lookup step has to exist.","reviewed":false,"note":[]}]}],"activeId":"ofz9wy0"}</script>
 <style>
   :root{
     --navy:#002D72;
@@ -153,7 +153,7 @@
   .tally b{font-size:21px;font-weight:640;line-height:1;color:var(--ink-900);letter-spacing:-.03em}
   .tally .lbl{
     font-size:11px;text-transform:uppercase;letter-spacing:.06em;
-    color:var(--ink-500);font-weight:600;
+    color:var(--ink-500);font-weight:600;white-space:nowrap;
   }
   .tally .hit b{color:var(--red)}
   .tally .warn b,.tally .warn .lbl{color:var(--ochre)}
@@ -347,7 +347,17 @@
   .p-sys {background:#E8EAEE;color:#414B58;border-color:#D8DCE3}
 
   /* ---------- key dialog ---------- */
-  .dialog.key{max-width:640px;max-height:82vh;overflow:auto}
+  .dialog.key{max-width:640px;max-height:82vh;overflow:auto;position:relative}
+  .dialog-close{
+    position:absolute;top:14px;right:14px;
+    display:flex;align-items:center;justify-content:center;
+    width:30px;height:30px;padding:0;
+    border:1px solid transparent;background:transparent;
+    border-radius:var(--r-sm);color:var(--ink-500);
+    transition:background .12s, color .12s;
+  }
+  .dialog-close:hover{background:var(--tint);color:var(--ink-900)}
+  .dialog.key h3{padding-right:36px}
   .key-sec{margin-top:18px}
   .key-sec h4{
     margin:0 0 9px;font-size:11px;text-transform:uppercase;letter-spacing:.07em;
@@ -539,6 +549,7 @@
 
 <div class="overlay no-print" id="keyOverlay">
   <div class="dialog key">
+    <button class="dialog-close" id="keyClose" title="Close" aria-label="Close"></button>
     <h3>What the labels mean</h3>
     <p>Everything below is a suggestion from your assistant until a person confirms it.</p>
 
@@ -591,9 +602,6 @@
         <span>A person decided. If they overruled the assistant, the original suggestion is kept on record.</span></div>
     </div>
 
-    <div class="dialog-foot">
-      <button class="btn primary" id="keyClose">Close</button>
-    </div>
   </div>
 </div>
 
@@ -601,7 +609,7 @@
   <div class="dialog">
     <h3>Paste JSON</h3>
     <p>Creates a new map from the JSON your assistant produced.</p>
-    <textarea id="pasteBox" spellcheck="false" placeholder="{&quot;title&quot;:&quot;…&quot;,&quot;changeModel&quot;:[{&quot;id&quot;:&quot;MHHS-01&quot;,&quot;name&quot;:&quot;…&quot;}],&quot;steps&quot;:[{&quot;name&quot;:&quot;…&quot;,&quot;action&quot;:[&quot;…&quot;],&quot;insight&quot;:[&quot;…&quot;],&quot;changes&quot;:[{&quot;id&quot;:&quot;MHHS-01&quot;,&quot;quote&quot;:&quot;…&quot;,&quot;evidence&quot;:&quot;stated&quot;}],&quot;changeType&quot;:&quot;&quot;,&quot;reason&quot;:&quot;…&quot;}]}"></textarea>
+    <textarea id="pasteBox" spellcheck="false" placeholder="{&quot;title&quot;:&quot;…&quot;,&quot;changeModel&quot;:[{&quot;id&quot;:&quot;CH-01&quot;,&quot;name&quot;:&quot;…&quot;}],&quot;steps&quot;:[{&quot;name&quot;:&quot;…&quot;,&quot;action&quot;:[&quot;…&quot;],&quot;insight&quot;:[&quot;…&quot;],&quot;changes&quot;:[{&quot;id&quot;:&quot;CH-01&quot;,&quot;quote&quot;:&quot;…&quot;,&quot;evidence&quot;:&quot;stated&quot;}],&quot;changeType&quot;:&quot;&quot;,&quot;reason&quot;:&quot;…&quot;}]}"></textarea>
     <div class="dialog-err" id="pasteErr"></div>
     <div class="dialog-foot">
       <button class="btn ghost" id="pasteCancel">Cancel</button>
@@ -1062,7 +1070,7 @@
     return b;
   }
 
-  // ---------- MHHS impact ----------
+  // ---------- change impact ----------
   var CHANGE_TYPE = [
     { v:"new",     label:"New step" },
     { v:"changed", label:"Changed"  },
@@ -1481,7 +1489,7 @@
 
     // billing
     var r4 = el("tr");
-    var rh4 = el("th","rowhead"); rh4.appendChild(el("div","pad","MHHS impact")); r4.appendChild(rh4);
+    var rh4 = el("th","rowhead"); rh4.appendChild(el("div","pad","Change impact")); r4.appendChild(rh4);
     view.forEach(function(v){
       r4.appendChild(impactCell(v.step, function(){ persist(); render(); }));
     });
@@ -1721,6 +1729,7 @@
     syncToolRow._t = setTimeout(syncToolRow, 120);
   });
 
+  $("#keyClose").appendChild(icon("close", 15, 1.8));
   decorate("#btnKey","question");
   decorate("#btnNew","plus");
   decorate("#btnDup","copy");
